@@ -24,16 +24,18 @@ class Dogs extends Component {
   }
 
   render() {
+    const { onAdd, onClear, cartPrice, cartCount } = this.props;
     return (
       <React.Fragment>
         <div className="offset-1 col-12 col-md-6 col-lg-6 p-3">
+        
           {this.state.items.map((item, index) => (
-            <MenuItem item={item} key={index} />
+            <MenuItem item={item} key={index} onAdd={onAdd}/>
           ))}
         </div>
         <div className="col-12 col-md-6 col-lg-3 p-3">
           <div className="row">
-            <OrderWidget />
+            <OrderWidget cartPrice={cartPrice} cartCount={cartCount} onClear={onClear}/>
           </div>
           <div className="row mt-3">
             <TwitterFeed />

@@ -24,11 +24,12 @@ class Beverage extends Component {
       }
     
       render() {
+        const { onAdd } = this.props;
         return (
           <React.Fragment>
             <div className="offset-1 col-12 col-md-6 col-lg-6 p-3">
               {this.state.items.map((item, index) => (
-                <MenuItem item={item} key={index} />
+                <MenuItem item={item} key={index} onAdd={onAdd} />
               ))}
             </div>
             <div className="col-12 col-md-6 col-lg-3 p-3">

@@ -21,7 +21,7 @@ class MenuItem extends Component {
               <h3 className="card-title mt-3">{item.name}</h3>
               <h5 className="card-text mt-3">{item.desc}</h5>
               <h5 className="card-text mt-3">{item.price}</h5>
-              <button onClick={() => this.props.OnAdd()} className="btn btn-primary mt-3">
+              <button onClick={() => this.props.onAdd(item.id)} className="btn btn-primary mt-3">
                             Add to Cart
                         </button>
             </div>
