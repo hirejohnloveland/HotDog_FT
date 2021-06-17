@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class Navbar extends Component {
   state = {};
   render() {
+    const {onCheckout} = this.props
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
@@ -57,7 +58,16 @@ class Navbar extends Component {
                 <h5>Drank</h5>
                 </a>
               </li>
+              <li className="nav-item pe-3">
+                <a className="nav-link" href="/cart">
+                <h5>View Order</h5>
+                </a>
+              </li>
             </ul>
+            <span class="navbar-text">
+              <button onClick={onCheckout}class="btn btn-outline-success my-2 my-sm-0 m-3">Checkout</button>
+            </span>
+
           </div>
         </div>
       </nav>
