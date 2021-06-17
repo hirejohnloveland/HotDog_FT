@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../css/menuitem.css";
 
 class MenuItem extends Component {
   state = {};

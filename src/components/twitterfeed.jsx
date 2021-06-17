@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import "../css/twitterfeed.css";
+
 
 import {
   TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterTweetEmbed,
 } from "react-twitter-embed";
 
 class TwitterFeed extends Component {

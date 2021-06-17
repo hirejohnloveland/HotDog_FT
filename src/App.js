@@ -3,11 +3,9 @@ import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Navbar from "../src/components/navbar";
 import Story from "../src/views/story";
-import Dogs from "../src/views/dogs";
-import Sides from "../src/views/sides";
-import Extras from "../src/views/extras";
-import Beverages from "../src/views/beverages";
-import Contact from "../src/views/contact";
+import Food from "../src/views/food";
+import OrderWidget from "../src/components/orderwidget";
+import TwitterFeed from "../src/components/twitterfeed";
 
 export default class App extends Component {
   constructor() {
@@ -21,13 +19,12 @@ export default class App extends Component {
   }
 
   checkError = (response) => {
-    if (response.status == '401') {
+    if (response.status === '401') {
         localStorage.removeItem("token")
         window.location.reload();
       }
       return response
     }
-
     
   getToken = () => {
   fetch(`/api/tokens/anon`, {
@@ -65,7 +62,7 @@ export default class App extends Component {
         'Authorization': 'Bearer ' + localStorage.getItem('token')}
     })
     .then(this.checkError)
-    .then(this.getCartSummary())
+    .then(this.getCartSummary)
   }
 
   handleClear = () => {
@@ -75,7 +72,7 @@ export default class App extends Component {
         'Authorization': 'Bearer ' + localStorage.getItem('token')}
     })
     .then(this.checkError)
-    .then(this.getCartSummary())
+    .then(this.getCartSummary)
   }
 
   componentDidMount() {
@@ -84,9 +81,6 @@ export default class App extends Component {
       else {this.getCartSummary()}
   }
 
-
-
-
   render() {
     const { cartCount, cartPrice } = this.state
     return (
@@ -94,15 +88,22 @@ export default class App extends Component {
         <Navbar />
         <div className="container-fluid">
           <div className="row">
-            <Switch>
-              <Route path="/story" component={Story} />
-              <Route path="/dogs"   render={(props) => (<Dogs onAdd={this.handleAdd} onClear={this.handleClear} cartCount={cartCount} cartPrice={cartPrice}/>)} />
-              <Route path="/sides" render={(props) => (<Sides onAdd={this.handleAdd} />)} />
-              <Route path="/extras" render={(props) => (<Extras onAdd={this.handleAdd} />)} />
-              <Route path="/beverages" render={(props) => (<Beverages onAdd={this.handleAdd} />)} />
-              <Route path="/contact" component={Contact} />
-              <Redirect from="/" to="/story" component={Story} />
-            </Switch>
+            <div className="offset-1 col-12 col-md-6 col-lg-6 p-3">
+              <Switch>
+                <Route path="/story" component={Story} />
+                <Route path="/food/:id"   render={({match}) => <Food onAdd={this.handleAdd} match={match} /> } />    
+                <Route path="/story" component={Story} />
+                <Redirect from="/" to="/story" component={Story} />
+              </Switch>
+            </div>
+            <div className="col-12 col-md-6 col-lg-3 p-3">
+              <div className="row">
+                <OrderWidget cartPrice={cartPrice} cartCount={cartCount} onClear={this.handleClear}/>
+              </div>
+              <div className="row mt-3">
+                <TwitterFeed />
+              </div>
+            </div>
           </div>
         </div>
       </div>

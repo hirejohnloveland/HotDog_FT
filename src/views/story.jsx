@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import OrderWidget from "../components/orderwidget";
-import TwitterFeed from "../components/twitterfeed";
+
 
 
 class Story extends Component {
@@ -12,7 +11,6 @@ class Story extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="offset-1 col-12 col-md-6 col-lg-6 p-3">
           <img
             className="d-block m-auto"
             src="https://res.cloudinary.com/coding-temple/image/upload/v1623719387/Top-10-Best-Images-of-Dogs-Wearing-Monocles-4_pokkoi.jpg"
@@ -32,16 +30,7 @@ class Story extends Component {
           just a pipe dream, it's also a demo e-commerce site. Shop around and you'll 
           soon find your mouth watering and your heart wishing that they had done the food truck
           instead of a web design boot camp. </h5>
-        </div>
 
-        <div className="col-12 col-md-6 col-lg-3 p-3">
-          <div className="row">
-            <OrderWidget />
-          </div>
-          <div className="row mt-3">
-            <TwitterFeed />
-          </div>
-        </div>
       </React.Fragment>
     );
   }
