@@ -133,7 +133,7 @@ export default class App extends Component {
             </div>
             <div className="col-12 col-md-6 col-lg-3 p-3">
               <div className="row">
-                <OrderWidget cartPrice={cartPrice} cartCount={cartCount} onClear={this.handleClear}/>
+                <OrderWidget cartPrice={cartPrice} cartCount={cartCount} onClear={this.handleClear} onCheckout={this.handleClear}/>
               </div>
               <div className="row mt-3">
                 <TwitterFeed />
