@@ -2,6 +2,4 @@
  from="/*"
  to="index.html"
  status=200
-[[redirects]]
- from = "/api/tokens/anon`
- to = "https://hotdogflask.herokuapp.com/api/tokens/anon"
+

@@ -29,7 +29,7 @@ export default class App extends Component {
     }
     
   getToken = () => {
-  fetch(`/api/tokens/anon`, {
+  fetch(`https://hotdogflask.herokuapp.com/api/tokens/anon`, {
     method: "POST",
   })
     .then((res) => res.json())
@@ -42,7 +42,7 @@ export default class App extends Component {
   }
   
   getCart = () => {
-    fetch(`/api/order/cart`, {
+    fetch(`https://hotdogflask.herokuapp.com/api/order/cart`, {
       method: "GET",
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token')}
@@ -57,7 +57,7 @@ export default class App extends Component {
   }
 
   getCartSummary = () => {
-    fetch(`/api/order/cart/summary`, {
+    fetch(`https://hotdogflask.herokuapp.com/api/order/cart/summary`, {
       method: "GET",
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token')}
@@ -73,7 +73,7 @@ export default class App extends Component {
   }
       
   handleAdd = (itemID) => {
-    fetch(`/api/order/add/${itemID}`, {
+    fetch(`https://hotdogflask.herokuapp.com/api/order/add/${itemID}`, {
       method: "POST",
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token')}
@@ -84,7 +84,7 @@ export default class App extends Component {
   }
 
   handleDelete = (itemOId) => {
-    fetch(`/api/order/remove/${itemOId}`, {
+    fetch(`https://hotdogflask.herokuapp.com/api/order/remove/${itemOId}`, {
       method: "POST",
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token')}
@@ -96,7 +96,7 @@ export default class App extends Component {
 
   handleClear = () => {
     console.log('clear')
-    fetch(`/api/order/delete`, {
+    fetch(`https://hotdogflask.herokuapp.com/api/order/delete`, {
       method: "POST",
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token')}

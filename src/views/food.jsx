@@ -12,7 +12,7 @@ class Food extends Component {
   }
 
   componentDidMount() {
-    fetch(`/api/menuitems/${this.props.match.params.id}`)
+    fetch(`https://hotdogflask.herokuapp.com/api/menuitems/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
