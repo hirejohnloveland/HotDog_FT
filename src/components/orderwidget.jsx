@@ -13,7 +13,7 @@ class OrderWidget extends Component {
           <h3 className="card-subtitle mb-2 text-muted">Total Items - {cartCount}</h3>
           <h3 className="card-subtitle mb-2 text-muted">Order Total - ${(cartPrice * 1.0825).toFixed(2)}</h3>
           <button onClick={() => onCheckout()}className="btn btn-success m-1">Checkout</button>
-          <Link to="/cart" className="btn btn-primary">Change Your Order</Link>
+          <Link to="/cart" className="btn btn-primary m-1">Change Your Order</Link>
           <button onClick={() => onClear()} className="btn btn-danger m-1">Delete Order</button>
         </div>
       </div>
