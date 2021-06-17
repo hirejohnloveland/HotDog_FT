@@ -5,7 +5,7 @@ import { Link} from 'react-router-dom'
 class OrderWidget extends Component {
   state = {};
   render() {
-    const {onClear, onView, onCheckout, cartCount, cartPrice} = this.props
+    const {onClear, onCheckout, cartCount, cartPrice} = this.props
     return (
       <div className="card w-100">
         <div className="card-body">
