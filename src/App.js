@@ -21,7 +21,7 @@ export default class App extends Component {
   }
 
   checkError = (response) => {
-    if (response.status == '401') {
+    if (response.status === 401) {
         localStorage.removeItem("token")
         window.location.reload();
       }
