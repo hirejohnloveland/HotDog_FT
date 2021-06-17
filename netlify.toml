@@ -3,5 +3,5 @@
  to="index.html"
  status=200
 [[redirects]]
- from = "/api/*"
- to = "https://hotdogflask.herokuapp.com/api/:splat"
+ from = "/api/tokens/anon`
+ to = "https://hotdogflask.herokuapp.com/api/tokens/anon"
