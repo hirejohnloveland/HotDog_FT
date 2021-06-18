@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class MenuItem extends Component {
-  state = {};
   render() {
     const item = this.props.item;
 

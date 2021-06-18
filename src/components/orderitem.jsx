@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class OrderItem extends Component {
-  state = {};
   render() {
     const item = this.props.item;
 
@@ -20,9 +19,12 @@ class OrderItem extends Component {
               <h3 className="card-title mt-3">{item.name}</h3>
               <h5 className="card-text mt-3">{item.desc}</h5>
               <h5 className="card-text mt-3">{item.price}</h5>
-              <button onClick={() => this.props.onDelete(item.oid)} className="btn btn-danger mt-3">
-                            Remove from Cart
-                        </button>
+              <button
+                onClick={() => this.props.onDelete(item.oid)}
+                className="btn btn-danger mt-3"
+              >
+                Remove from Cart
+              </button>
             </div>
           </div>
         </div>
